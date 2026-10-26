@@ -1,0 +1,48 @@
+{
+  "name": "Location",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Human-readable address or place name entered by the user"
+    },
+    "street_address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "county": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "default": "Iowa"
+    },
+    "watershed_name": {
+      "type": "string",
+      "description": "Nearest watershed / drainage basin name if resolved"
+    },
+    "watershed_huc": {
+      "type": "string",
+      "description": "Hydrologic Unit Code if available"
+    },
+    "geocoded_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "latitude",
+    "longitude"
+  ]
+}

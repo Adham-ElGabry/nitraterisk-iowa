@@ -1,0 +1,53 @@
+{
+  "name": "StreamflowObservation",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "usgs_site_code": {
+      "type": "string"
+    },
+    "usgs_site_name": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "distance_miles": {
+      "type": "number"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "discharge_cfs": {
+      "type": "number",
+      "description": "Streamflow in cubic feet per second"
+    },
+    "discharge_trend": {
+      "type": "string",
+      "enum": [
+        "rising",
+        "falling",
+        "stable",
+        "unknown"
+      ]
+    },
+    "percent_normal": {
+      "type": "number",
+      "description": "Flow as percent of historical median where available"
+    }
+  },
+  "required": [
+    "usgs_site_code",
+    "retrieved_at"
+  ]
+}

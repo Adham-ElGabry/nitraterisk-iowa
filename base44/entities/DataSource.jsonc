@@ -1,0 +1,37 @@
+{
+  "name": "DataSource",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "e.g. NOAA, USGS, USDA/NRCS, Iowa DNR"
+    },
+    "category": {
+      "type": "string",
+      "description": "e.g. Weather/precipitation, Streamflow/water quality"
+    },
+    "endpoint": {
+      "type": "string",
+      "description": "Base API/URL used"
+    },
+    "home_url": {
+      "type": "string",
+      "description": "Official public landing page for linking"
+    },
+    "last_retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "available": {
+      "type": "boolean",
+      "description": "Whether the source returned data for the latest request"
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ]
+}

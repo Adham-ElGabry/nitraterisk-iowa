@@ -1,0 +1,70 @@
+{
+  "name": "WeatherObservation",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "station_id": {
+      "type": "string"
+    },
+    "station_name": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "temperature_f": {
+      "type": "number"
+    },
+    "temperature_c": {
+      "type": "number"
+    },
+    "precipitation_24h_in": {
+      "type": "number"
+    },
+    "precipitation_72h_in": {
+      "type": "number"
+    },
+    "forecast_72h_in": {
+      "type": "number"
+    },
+    "forecast_periods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "precip_in": {
+            "type": "number"
+          },
+          "temp_f": {
+            "type": "number"
+          },
+          "short_forecast": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "humidity_pct": {
+      "type": "number"
+    },
+    "wind_mph": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "retrieved_at"
+  ]
+}

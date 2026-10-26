@@ -1,0 +1,46 @@
+{
+  "name": "NitrateObservation",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "usgs_site_code": {
+      "type": "string"
+    },
+    "usgs_site_name": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "nitrate_mg_l": {
+      "type": "number",
+      "description": "Nitrate concentration as N, mg/L"
+    },
+    "unit": {
+      "type": "string",
+      "default": "mg/L as N"
+    },
+    "threshold_mg_l": {
+      "type": "number",
+      "default": 10,
+      "description": "Drinking water MCL 10 mg/L"
+    }
+  },
+  "required": [
+    "usgs_site_code",
+    "retrieved_at"
+  ]
+}

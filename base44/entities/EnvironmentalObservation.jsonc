@@ -1,0 +1,36 @@
+{
+  "name": "EnvironmentalObservation",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string",
+      "description": "Originating agency/system e.g. NOAA, USGS"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "retrieved_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metric": {
+      "type": "string",
+      "description": "e.g. soil_moisture, temperature"
+    },
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "source",
+    "metric",
+    "retrieved_at"
+  ]
+}

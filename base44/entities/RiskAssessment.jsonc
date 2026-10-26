@@ -1,0 +1,101 @@
+{
+  "name": "RiskAssessment",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "field_id": {
+      "type": "string"
+    },
+    "assessed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "risk_category": {
+      "type": "string",
+      "enum": [
+        "LOW",
+        "MODERATE",
+        "ELEVATED",
+        "HIGH",
+        "INSUFFICIENT DATA"
+      ]
+    },
+    "risk_probability_pct": {
+      "type": "number",
+      "description": "Prototype probability estimate, null when insufficient data"
+    },
+    "data_confidence": {
+      "type": "string",
+      "enum": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
+    "factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "contribution": {
+            "type": "string",
+            "enum": [
+              "LOWER RISK",
+              "NEUTRAL",
+              "UNKNOWN",
+              "INCREASED RISK"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "forecast_72h": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "period": {
+            "type": "string"
+          },
+          "rainfall_in": {
+            "type": "number"
+          },
+          "risk_category": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string"
+          },
+          "streamflow_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "assessed_at",
+    "risk_category",
+    "data_confidence"
+  ]
+}

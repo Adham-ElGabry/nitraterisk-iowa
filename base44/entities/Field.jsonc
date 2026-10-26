@@ -1,0 +1,43 @@
+{
+  "name": "Field",
+  "type": "object",
+  "properties": {
+    "location_id": {
+      "type": "string"
+    },
+    "acreage": {
+      "type": "number",
+      "description": "Total reported acreage (decimals allowed)"
+    },
+    "primary_crop": {
+      "type": "string",
+      "enum": [
+        "Corn",
+        "Soybeans",
+        "Other",
+        "Unknown"
+      ],
+      "default": "Unknown"
+    },
+    "irrigated": {
+      "type": "boolean"
+    },
+    "fertilizer_timing": {
+      "type": "string",
+      "enum": [
+        "Within 7 days",
+        "8-30 days ago",
+        "More than 30 days ago",
+        "Unknown"
+      ],
+      "default": "Unknown"
+    },
+    "label": {
+      "type": "string",
+      "description": "Optional field name/label for multi-field support"
+    }
+  },
+  "required": [
+    "acreage"
+  ]
+}
